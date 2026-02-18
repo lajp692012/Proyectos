@@ -1,0 +1,211 @@
+@charset "utf-8";
+/* CSS Document */
+/* Estilos base */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #336;
+  padding: 0.5rem 1rem;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem;
+  display: block;
+  transition: background 0.3s;
+}
+
+.menu a:hover {
+  background: #444;
+}
+
+/* Submenús en escritorio */
+.submenu:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background: #336;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  top: 100%;
+  left: 0;
+  min-width: 280px;
+}
+
+.dropdown li a {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown li a:hover {
+  background: #336;
+}
+
+/* Botón hamburguesa */
+.toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Banner de comentarios */
+.banner-comentarios {
+  background-color: #0b1d3a; /* Azul oscuro */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.banner-comentarios h2 {
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.comentarios {
+  display: flex;
+  /*flex-wrap: wrap;*/
+  justify-content: center;
+  gap: 15px;
+}
+
+.comentario {
+  background-color: #333; /* Gris oscuro */
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 100%;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.comentario p {
+  margin: 0 0 10px;
+  font-style: italic;
+}
+
+.comentario span {
+  font-size: 14px;
+  color: #ccc;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #333;
+    flex-direction: column;
+    width: 220px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .menu.active {
+    max-height: 500px; /* suficiente para mostrar todo */
+  }
+
+  .menu li {
+    margin: 0;
+    border-bottom: 1px solid #444;
+  }
+
+  .dropdown {
+    position: static;
+    background: #222;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .dropdown.open {
+    max-height: 300px;
+  }
+
+  .toggle {
+    display: block;
+  }
+}
+
+/* Secciones */
+main {
+  padding: 20px;
+}
+
+.intro {
+  margin-bottom: 20px;
+}
+
+.formulario-contacto form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 15px;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #0b1d3a;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}
